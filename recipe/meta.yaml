@@ -1,32 +1,30 @@
 {% set name = "hug" %}
-{% set version = "2.2.0" %}
-{% set sha256 = "74d412f3676ae2c54051ddfec8cc8c9972758482ae6e98beaa26dee6b89db832" %}
+{% set version = "2.4.0" %}
+{% set sha256 = "aa60ab69d1939f327ee973f2109f63bc78a5b30b19f433e253e456c233cc2bc0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://github.com/timothycrosley/hug/archive/{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/h/hug/hug-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
   number: 0
   skip: true  # [py2k]
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  script: python -m pip install --no-deps --ignore-installed .
   entry_points:
     - hug = hug:development_runner.hug.interface.cli
 
 requirements:
   build:
     - python
-    - setuptools
+    - pip
   run:
     - python
-    - falcon 1.0.0
-    - requests
-
+    - falcon >=1.4.1
+    - requests >=2.9.1
 test:
   imports:
     - hug
@@ -52,3 +50,4 @@ about:
 extra:
   recipe-maintainers:
     - daf
+    - kwilcox

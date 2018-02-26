@@ -18,6 +18,18 @@ clients need to consume it. Be it locally, over HTTP, or through the command
 line - hug is the fastest and most modern way to create APIs on Python3.
 
 
+Current build status
+====================
+
+Linux: [![Circle CI](https://circleci.com/gh/conda-forge/hug-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/hug-feedstock)
+OSX: [![TravisCI](https://travis-ci.org/conda-forge/hug-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/hug-feedstock)
+Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/hug-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/hug-feedstock/branch/master)
+
+Current release info
+====================
+Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/hug/badges/version.svg)](https://anaconda.org/conda-forge/hug)
+Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/hug/badges/downloads.svg)](https://anaconda.org/conda-forge/hug)
+
 Installing hug
 ==============
 
@@ -38,7 +50,6 @@ It is possible to list all of the versions of `hug` available on your platform w
 ```
 conda search hug --channel conda-forge
 ```
-
 
 
 About conda-forge
@@ -62,6 +73,7 @@ To manage the continuous integration and simplify feedstock maintenance
 Using the ``conda-forge.yml`` within this repository, it is possible to re-render all of
 this feedstock's supporting files (e.g. the CI configuration files) with ``conda smithy rerender``.
 
+For more information please check the [conda-forge documentation](https://conda-forge.org/docs/).
 
 Terminology
 ===========
@@ -74,18 +86,6 @@ Terminology
 
 **conda-forge** - the place where the feedstock and smithy live and work to
                   produce the finished article (built conda distributions)
-
-Current build status
-====================
-
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/hug-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/hug-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/hug-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/hug-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/hug-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/hug-feedstock/branch/master)
-
-Current release info
-====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/hug/badges/version.svg)](https://anaconda.org/conda-forge/hug)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/hug/badges/downloads.svg)](https://anaconda.org/conda-forge/hug)
 
 
 Updating hug-feedstock
