@@ -1,29 +1,30 @@
-{% set name = "hug" %}
-{% set version = "2.4.1" %}
-{% set sha256 = "7b633ebbed95f4c264a745cf91450007fe7004e1eaa5b02bf9b3ad28fdd62d08" %}
+{% set version = "2.4.2" %}
 
 package:
-  name: {{ name|lower }}
+  name: hug
   version: {{ version }}
 
 source:
   url: https://pypi.io/packages/source/h/hug/hug-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  sha256: 30bd254214fe952ac399723bb781dfd5e31965951c8a35dfc4282fa428779a3f
 
 build:
-  number: 1000
-  skip: true  # [py2k]
-  script: python -m pip install --no-deps --ignore-installed .
+  number: 0
+  skip: true  # [py<34]
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   entry_points:
     - hug = hug:development_runner.hug.interface.cli
 
 requirements:
   build:
+    - {{ compiler('c') }}
+  host:
     - python
+    - cython
     - pip
   run:
     - python
-    - falcon >=1.4.1
+    - falcon 1.4.1
     - requests >=2.9.1
 test:
   imports:
