@@ -1,4 +1,4 @@
-{% set version = "2.5.6" %}
+{% set version = "2.6.0" %}
 
 package:
   name: hug
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/h/hug/hug-{{ version }}.tar.gz
-  sha256: 0f482e982cc2b5f821803bc81b9cf9aa9c82c3d6674ca968609e89723269184b
+  sha256: a04cd002614e8c788d58e5dcd5b932a62e2d2c33d4bd69fd8a3d7ce4e5cf5545
 
 build:
   number: 0
