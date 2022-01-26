@@ -9,11 +9,11 @@ source:
   sha256: b0edace2acb618873779c9ce6ecf9165db54fef95c22262f5700fcdd9febaec9
 
 build:
-  number: 0
-  skip: true  # [py<34]
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  skip: true  # [py<36]
   entry_points:
     - hug = hug:development_runner.hug.interface.cli
+  script: {{ PYTHON }} -m pip install . -vv
+  number: 1
 
 requirements:
   build:
@@ -25,14 +25,20 @@ requirements:
     - pytest-runner
   run:
     - python
-    - falcon 1.4.1
-    - requests >=2.9.1
+    - falcon ==2.0.0
+    - requests
 test:
   imports:
     - hug
 
+test:
+  imports:
+    - hug
   commands:
+    - pip check
     - hug --help
+  requires:
+    - pip
 
 about:
   home: http://www.hug.rest/
