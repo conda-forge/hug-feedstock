@@ -12,7 +12,7 @@ build:
   skip: true  # [py<36]
   entry_points:
     - hug = hug:development_runner.hug.interface.cli
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 2
 
 requirements:
