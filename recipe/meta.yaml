@@ -5,19 +5,20 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/h/hug/hug-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/h/hug/hug-{{ version }}.tar.gz
   sha256: b0edace2acb618873779c9ce6ecf9165db54fef95c22262f5700fcdd9febaec9
 
 build:
   skip: true  # [py<36]
   entry_points:
     - hug = hug:development_runner.hug.interface.cli
-  script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 2
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - python
     - cython
